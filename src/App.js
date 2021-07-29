@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
 
+   // Component As Function .. returns HTML(JSX)
+
 function App() {
-  return (
+
+  const [codingBootcamp, setCodingBootcamp] = useState("");    // creatin an initial state. 
+  const [count, setCount] = useState(0);     // creatin an initial state.
+
+    return (
+
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+          <h1>  Coding Bootcamp: {codingBootcamp} </h1> 
+     
+          <button onClick={ 
+                      () => setCodingBootcamp("MERN Full Stack" )
+                } 
+            >
+            Click Me
+          </button>
+
+          <h1>  Counter Values: {count} </h1> 
+          <button onClick={ () => setCount(count + 1) } >
+              Count
+          </button>
+          
     </div>
+    
   );
 }
-
 export default App;
+
+ 
+
